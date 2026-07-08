@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spam Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}">
+  </head>
+  <body>
+    <div class="head-wrapper">
+      <span>spam checker</span>
+      <ol>
+        <li
+          onclick="handlePageChange('index.html')"
+          id="home"
+          class="hdListColor"
+        >
+          Home
+        </li>
+        <li><a href="{{ url_for('aboutFunction') }}" target="_parent">Know About Us</a>
+        </li>
+      </ol>
+    </div>
+    <div class="second-wrapper">
+      <div class="result-wrapper">
+        <div class="res-title">Result</div>
+        <span>{{output}}</span>
+      </div>
+    </div>
+    <div class="third-wrapper"></div>
+    <div class="fourth-wrapper">
+      <div class="title-wrapper"><strong>how it works</strong></div>
+      <div class="divider-div"></div>
+      <div class="inst-wrapper">
+        <ol>
+          <li>
+            Recharge of Rs 209 was successfull  >>>>   Not a spam SMS.
+        
+          </li>
+          <li>
+            Congratulations! you've won a Rs10000 Flipkart gift card >>>> A spam SMS. 
+            
+          </li>
+          <li>
+            Your One Time Verification code for flipkart is 664422 >>>> Not a spam email.
+            
+          </li>
+          <li>
+            Congratulations! You’ve won a million dollars. Just send us your credit card details to claim your prize >>>> A spam email
+            
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="card-wrapper">
+      <div class="mode-wrapper">
+        <ol>
+          <li id="mode">Mode</li>
+          <li id="sms" onclick="handleChangeMode()" class="mode-changer btn sms-b">
+            SMS
+          </li>
+          <li
+            id="email"
+            onclick="handleChangeMode()"
+            class="remove-mode-changer btn email-b"
+          >
+            Email
+          </li>
+        </ol>
+      </div>
+      <div class="div-line-wrapper">
+        <hr class="div-line" />
+      </div>
+      <form action="{{ url_for('sms_prediction') }}" method="post" id="text-form">
+        <div class="text-wrapper">
+          <textarea
+            name="text"
+            id="inp"
+            class="text-area"
+            placeholder="Type you text here..."
+          ></textarea>
+        </div>
+        <div class="button-wrapper">
+          <input type="submit" name="" id="" class="checkBtn" value="Check" />
+        </div>
+            </div>
+      </form>
+
+      <div class="footer">
+        <div class="footer-row">
+          <div class="column">
+            <div class="heading">Important Links</div>
+            <ul class="list">
+              <li class="li-ele"><a href="https://docs.python.org/3/" target="_blank">Python</a></li>
+              <li class="li-ele"><a href="https://pandas.pydata.org/docs/" target="_blank">Pandas</a></li>
+              <li class="li-ele"><a href="https://numpy.org/doc/" target="_blank">Numpy</a></li>
+              <li class="li-ele"><a href="https://scikit-learn.org/stable/user_guide.html" target="_blank">Scikit-Learn</a></li>
+              <li class="li-ele"><a href="https://flask.palletsprojects.com/en/3.0.x/" target="_blank">Flask</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <div class="heading">Github<i class="fa-brands fa-github"></i></div>
+            <ul class="list">
+              <li class="li-ele"><a href="https://github.com/Simpl1fy" target="_blank">Gourab Das</a></li>
+              <li class="li-ele"><a href="" target="_blank">Arijit Paul</a></li>
+              <li class="li-ele"><a href="https://github.com/Arkajit-paul" target="_blank">Arkajit Paul</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <div class="heading">Contact Us</div>
+            <ul class="list">
+              <li class="li-ele"><a href="" target="_blank">Gmail<i class="fa-regular fa-envelope"></i></a></li>
+              <li class="li-ele"><a href="" target="_blank">Twitter<i class="fa-brands fa-x-twitter"></i></a></li>
+              <li class="li-ele"><a href="" target="_blank">Linkedin<i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <div class="heading">Creator</div>
+            <ul class="list">
+              <li class="li-ele"><a href="{{ url_for('aboutFunction') }}" target="_blank">Know About Us</a></li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    
+
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+  </body>
+</html>

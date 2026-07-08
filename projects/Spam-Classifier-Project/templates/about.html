@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}" />
+  </head>
+  <body>
+    <div class="head-wrapper">
+      <span>spam checker</span>
+      <ol>
+        <li><a href="{{ url_for('index') }}" target="_parent" id="home">Home</a></li>
+        <li><a href="{{ url_for('aboutFunction') }}" target="_parent" id="about">Know About Us</a></li>
+      </ol>
+    </div>
+    <div class="main-secation">
+        <div class="image-wrapper">
+            <div class="first-image"></div>
+            <span class="name-section">Arijit paul</span>
+            <span class="desc-section">Frontend</span>
+        </div>
+        <div class="image-wrapper">
+            <div class="second-image"></div>
+            <span class="name-section">Arkajit paul</span>
+            <span class="desc-section">backend</span>
+        </div>
+        <div class=" image-wrapper">
+            <div class="third-image"></div>
+            <span class="name-section">Gourab das</span>
+            <span class="desc-section">Ml</span>
+        </div>
+    </div>
+
+    <script>
+      function handlePageChange(url) {
+        // Navigate to the new URL
+        window.location.href = url;
+      }
+      const handleAboutChange = () => {
+        var currentUrl = window.location.href;
+        // console.log(currentUrl);
+        window.location.href = currentUrl;
+      }
+
+      function addClassBasedOnURL() {
+        // Get the current URL and extract the last part of the URL
+        let currentURL = window.location.href;
+        let urlParts = currentURL.split("/");
+        let lastElement = urlParts[urlParts.length - 1];
+
+        // Handle empty last element if the URL ends with a slash
+        if (lastElement === "") {
+          lastElement = urlParts[urlParts.length - 2];
+        }
+
+        // Remove 'hdListColor' class from all list items
+        document.querySelectorAll(".head-wrapper ol li").forEach((li) => {
+          li.classList.remove("hdListColor");
+        });
+
+        // Add 'hdListColor' class to the appropriate list item based on the URL
+        if (lastElement === "index.html") {
+          document.getElementById("home").classList.add("hdListColor");
+        } else if (lastElement === "about.html") {
+          document.getElementById("about").classList.add("hdListColor");
+        } else if (lastElement === "qna.html") {
+          document.getElementById("qna").classList.add("hdListColor");
+        }
+      }
+
+      // Call the function when the page loads
+      window.onload = addClassBasedOnURL;
+    </script>
+  </body>
+</html>

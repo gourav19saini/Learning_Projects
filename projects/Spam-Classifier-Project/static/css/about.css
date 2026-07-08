@@ -1,0 +1,145 @@
+/* css for about page  */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .head-wrapper {
+    height: 12vh;
+    width: 100vw;
+    background-color: #fff;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 30px;
+  }
+  .head-wrapper span {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #3a8fd8;
+  }
+  .head-wrapper ol {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 20px;
+  }
+  .head-wrapper ol li {
+    margin-left: 40px;
+    cursor: pointer;
+  }
+
+  .head-wrapper > ol > li > a {
+    color: #000;
+    text-decoration: none;
+  }
+
+.main-secation {
+    position: relative;
+    height: calc(100vh - 12vh);
+    width: 100vw;
+    background-image: linear-gradient(0deg, #62c8df, #85e4fa, #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+  }
+  .image-wrapper {
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .first-image,
+  .second-image,
+  .third-image {
+    margin-top: -150px;
+    background-image: url(./images/roni.jpg);
+    background-size: cover; /* Cover the entire element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    height: 200px;
+    width: 200px;
+    border: 5px solid #22527c;
+    box-shadow: 0 0 20px 0 rgba(34, 110, 129, 0.307);
+    border-radius: 50%;
+    animation: floatAnimation 3s infinite alternate;
+  }
+  .second-image {
+    background-image: url(./images/boni.jpg);
+  }
+  .third-image {
+    background-image: url(./images/gd.jpg);
+  }
+  
+  @keyframes floatAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px); /* Adjust the distance as needed */
+    }
+  }
+  
+  .name-section {
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: #1f4851;
+    font-weight: bolder;
+    font-size: 20px;
+  }
+  .desc-section {
+    margin-top: 2px;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .main-secation {
+      flex-direction: column;
+      padding-top: 80px;
+    }
+    .first-image,
+    .second-image,
+    .third-image {
+      height: 120px;
+      width: 120px;
+    }
+    .name-section {
+      font-size: 16px;
+    }
+    .desc-section {
+      font-size: 12px;
+    }
+    .head-wrapper {
+      padding-right: 10px;
+    }
+    .card-wrapper {
+      height: 35%;
+      width: 80%;
+    }
+    .title-wrapper {
+      font-size: 15px;
+      margin-left: 15px;
+    }
+    .inst-wrapper ol li {
+      font-size: 10px;
+      line-height: 18px;
+      margin-left: -50px;
+    }
+    .inst-wrapper {
+      padding-right: 10px;
+    }
+  }
+  

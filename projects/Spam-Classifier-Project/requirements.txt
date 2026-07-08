@@ -1,0 +1,7 @@
+pandas==2.2.1
+numpy==1.26.4
+scikit-learn==1.4.1.post1
+flask==3.0.2
+pickle-mixin==1.0.2
+nltk==3.8.1
+Gunicorn==22.0.0
